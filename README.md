@@ -1,73 +1,50 @@
-# React + TypeScript + Vite
+# 🌍 Translated Fun Fact App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This React app displays fun facts in multiple English and Norwegian. Users can select a language, and the app shows a random fun fact in that language. The app includes accessibility features and automated tests with Vitest + React Testing Library.
 
-Currently, two official plugins are available:
+## How to Run the App
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Install dependencies:
 
-## React Compiler
+```bash
+npm install
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+2. Start the development server:
 
-## Expanding the ESLint configuration
+npm run dev
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+	3.	Open your browser at http://localhost:5173.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+ How Translations Work
+	•	All fun facts are stored in translations.json.
+	•	The app reads this file and displays fun facts based on the selected language.
+	•	Users can switch languages using the dropdown, and the fun fact text updates dynamically.
+	•	Fun facts are randomly selected from the list for extra variety.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+ How to Run Tests
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+This app uses Vitest and React Testing Library.
+	•	Run all tests in the terminal:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+npm test
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+	•	Run tests with a UI:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+npm run test:ui
+
+Tests verify:
+	•	Initial render shows a fun fact in the default language.
+	•	Switching languages updates the displayed fun fact.
+	•	Semantic HTML and accessible labels are used.
+	•	Translation data is read from the static JSON file.
+
+♿ Accessibility
+	•	The language selector has a clear accessible label (Choose language:).
+	•	Fun facts are displayed inside a <section> with aria-label="fun fact display" for screen readers.
+
+
+📝 Project Notes
+	•	Built using React + TypeScript + Vite.
+	•	Fun facts are structured in a JSON file for easy maintainability.
+	•	Supports at least two languages and dynamically updates content.
+
