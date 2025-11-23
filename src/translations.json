@@ -1,0 +1,22 @@
+{
+  "en": {
+    "funFacts": [
+      {
+        "text": "I can solve a Rubik's Cube in under two minutes."
+      },
+      {
+        "text": "I bake sourdough bread every weekend. My sourdough starter is five years old! "
+      }
+    ]
+  },
+  "no": {
+    "funFacts": [
+      {
+        "text": "Jeg kan løse en Rubiks kube på under to minutter."
+      },
+      {
+        "text": "Jeg baker surdeigsbrød hver helg. Min surdeigsstarter er fem år gammel!"
+      }
+    ]
+  }
+}
